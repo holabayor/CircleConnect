@@ -1,6 +1,6 @@
 import { Response } from "express";
 import { Req } from "../../types";
-import wrapper from "../../middlewear/wrapper";
+import wrapper from "../../middlewares/wrapper";
 import { loginJWT, registerJWT } from "../../controllers/Auth/jwt-controller";
 
 const express = require("express");
