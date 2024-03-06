@@ -70,13 +70,12 @@ export const loginJWT = async (req: Req, res: Response) => {
 };
 
 export const registerJWT = async (req: Req, res: Response) => {
-	const { email, password, first_name, last_name } = req.body;
-	if (!email || !password || !first_name || !last_name) {
-		throw new CustomError(
-			"Email, password, last name, and first name must be provided.",
-			StatusCodes.BAD_REQUEST
-		);
-	}
+	const { email, password, first_name, last_name } = req.body as {
+		email: string;
+		password: string;
+		first_name: string;
+		last_name: string;
+	};
 
 	try {
 		const hashedPassword = await hash(password);
